@@ -17,7 +17,6 @@ export default {
      align-items: center;
      justify-content: center;
      z-index: 10;
-     border: 1px solid red;
  }
 
  .gift img {
