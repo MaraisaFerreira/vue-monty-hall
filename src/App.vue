@@ -1,28 +1,44 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <h1>Monty Hall</h1>
+      <Gift />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Gift from './components/Gift'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  components: { Gift }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+*{
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
+
+body {
+  color: white;
+  background: #121FCF;
+  background: linear-gradient(to top right, #121FCF 0%, #ec06d9 89%);
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+#app h1 {
+  text-shadow: 4px 2px 3px rgba(0, 0, 0, 0.68);
+  background: #0008;
+  padding: 20px;
+  margin-bottom: 60px;
+  border: 1px solid black;
+}
+
 </style>
