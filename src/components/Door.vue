@@ -47,6 +47,8 @@ export default {
 	display: flex;
 	justify-content: center;
 	font-size: 1.3rem;
+	margin-right: 10px;
+	margin-left: 10px;
 }
 
 .door-frame {
