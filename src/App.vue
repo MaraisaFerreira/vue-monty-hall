@@ -2,15 +2,17 @@
   <div id="app">
       <h1>Monty Hall</h1>
       <Gift />
+      <Error />
   </div>
 </template>
 
 <script>
 import Gift from './components/Gift'
+import Error from './components/Error'
 
 export default {
   name: 'App',
-  components: { Gift }
+  components: { Gift, Error }
 }
 </script>
 
