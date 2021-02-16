@@ -36,19 +36,34 @@ export default {
 
 <style>
 :root {
-	--border-frame: solid 11px #c7660ce0;
+	/* Bordas */
+	--border-frame: solid 11px #8d4705e0;
+
+	/* Medidas */
+	--door-width: 200px;
+	--door-height: 310px;
+	--door-margin: 10px;
+
+	/* Cores */
+	--bg-opened-door: #000;
+	--bg-number: #0009;
+
+	/* Sombras */
+	--selected-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff,
+		0 0 20px #ccff0095, 0 0 20px #ccff0095, 0 0 20px #ccff0095,
+		0 0 25px #ccff0095, 0 0 20px #ccff0095;
 }
 
 .door-area {
 	position: relative;
-	width: 200px;
-	height: 310px;
+	width: var(--door-width);
+	height: var(--door-height);
 	margin-bottom: 20px;
 	display: flex;
 	justify-content: center;
 	font-size: 1.3rem;
-	margin-right: 10px;
-	margin-left: 10px;
+	margin-right: var(--door-margin);
+	margin-left: var(--door-margin);
 }
 
 .door-frame {
@@ -62,7 +77,8 @@ export default {
 	border-top: var(--border-frame);
 	border-right: var(--border-frame);
 	border-left: var(--border-frame);
-	background: black;
+	border-bottom: 5px solid black;
+	background: var(--bg-opened-door);
 }
 
 .door {
@@ -92,7 +108,7 @@ export default {
 	margin-top: 69px;
 	width: 30px;
 	border: 1px solid black;
-	background: #0009;
+	background: var(--bg-number);
 	border-radius: 5px;
 	display: flex;
 	align-items: center;
@@ -100,8 +116,7 @@ export default {
 }
 
 .door.selected {
-	box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ccff00,
-		0 0 20px #ccff00, 0 0 20px #ccff00, 0 0 25px #ccff00, 0 0 20px #ccff00;
+	box-shadow: var(--selected-shadow);
 }
 
 .door.open {
