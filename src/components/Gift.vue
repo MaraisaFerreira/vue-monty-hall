@@ -21,6 +21,5 @@ export default {
 
  .gift img {
      width: 100px;
-     height: 95px;
  }
 </style>
