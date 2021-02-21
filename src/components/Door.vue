@@ -4,7 +4,7 @@
 			<Gift v-if="open && hasGift" />
 			<Error v-if="open && !hasGift" />
 		</div>
-		<div class="door" @click="selected = !selected" :class="{ selected, open }">
+		<div class="door">
 			<div class="img-box">
 				<img src="../assets/imgs/door.jpg" />
 			</div>
@@ -23,13 +23,7 @@ export default {
 	props: {
 		number: {},
 		hasGift: { type: Boolean },
-	},
-
-	data() {
-		return {
-			open: false,
-			selected: false,
-		};
+		open: {},
 	},
 };
 </script>
@@ -115,11 +109,7 @@ export default {
 	justify-content: center;
 }
 
-.door.selected {
-	box-shadow: var(--selected-shadow);
-}
-
-.door.open {
+.open {
 	display: none;
 }
 
@@ -129,5 +119,9 @@ export default {
 
 .door.open .number {
 	display: none;
+}
+
+.doorSelected {
+	box-shadow: var(--selected-shadow);
 }
 </style>
