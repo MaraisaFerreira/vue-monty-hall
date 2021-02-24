@@ -16,7 +16,6 @@
 <script>
 import Gift from './Gift';
 import Error from './Error';
-
 export default {
 	name: 'Door',
 	components: { Gift, Error },
@@ -32,22 +31,18 @@ export default {
 :root {
 	/* Bordas */
 	--border-frame: solid 11px #8d4705e0;
-
 	/* Medidas */
 	--door-width: 200px;
 	--door-height: 310px;
 	--door-margin: 10px;
-
 	/* Cores */
 	--bg-opened-door: #000;
 	--bg-number: #0009;
-
 	/* Sombras */
 	--selected-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff,
 		0 0 20px #ccff0095, 0 0 20px #ccff0095, 0 0 20px #ccff0095,
 		0 0 25px #ccff0095, 0 0 20px #ccff0095;
 }
-
 .door-area {
 	position: relative;
 	width: var(--door-width);
@@ -59,7 +54,6 @@ export default {
 	margin-right: var(--door-margin);
 	margin-left: var(--door-margin);
 }
-
 .door-frame {
 	position: absolute;
 	width: 100%;
@@ -67,35 +61,29 @@ export default {
 	display: flex;
 	justify-content: center;
 	align-items: flex-end;
-
 	border-top: var(--border-frame);
 	border-right: var(--border-frame);
 	border-left: var(--border-frame);
 	border-bottom: 5px solid black;
 	background: var(--bg-opened-door);
 }
-
 .door {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
-
 .img-box {
 	position: absolute;
 	width: 100%;
 	height: 100%;
 }
-
 .img-box img {
 	width: 100%;
 	height: 100%;
 }
-
 .door .number {
 	position: absolute;
 	z-index: 10;
@@ -108,19 +96,15 @@ export default {
 	align-items: center;
 	justify-content: center;
 }
-
 .open {
 	display: none;
 }
-
 .door.open .img-box {
 	display: none;
 }
-
 .door.open .number {
 	display: none;
 }
-
 .doorSelected {
 	box-shadow: var(--selected-shadow);
 }

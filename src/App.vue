@@ -33,51 +33,51 @@ export default {
 			doorsAmount: null,
 			doorRewarded: null,
 			selected: false,
-			openedNumbers: [],
+			openedDoors: [],
+			toOpen: [],
 		};
 	},
 	methods: {
+		//gera a qtd de portas do jogo
 		getDoorsAmount() {
 			return Math.floor(Math.random() * 10 + 5);
 		},
+
+		//gera qual porta tá com o presente
 		getDoorRewarded() {
 			return Math.floor(Math.random() * this.doorsAmount);
 		},
 
+		//selec/dessel as portas
 		setSelected(idx) {
 			this.selected = idx;
-			console.log('selectedIdx', this.selected);
+			console.log('SelectedIdx', this.selected);
 			this.openDoors();
 		},
 
-		openDoors() {
-			const number = this.drawNumber();
-			this.openedNumbers.push(number);
-			console.log('Array', this.openedNumbers);
-
-			/* if (openNumbers.includes(number)) {
-				this.openDoors();
-				return;
-			} */
-		},
-
-		drawNumber() {
-			const draw = Math.floor(Math.random() * this.doorsAmount);
-			if (draw == this.doorRewarded || draw == this.selected) {
-				console.log('Ops- proibido');
-				this.drawNumber();
-			}
-			return draw;
-		},
+		//abre as portas não premiadas ou selecionada
+		openDoors() {},
 	},
+
 	mounted() {
 		this.doorsAmount = this.getDoorsAmount();
 		this.doorRewarded = this.getDoorRewarded();
+
+		let n = 1;
+		while (n <= this.doorsAmount) {
+			if (n != this.doorRewarded) {
+				this.toOpen.push(n);
+			}
+			n++;
+		}
+
 		console.log(
-			'portas =',
+			'N portas =',
 			this.doorsAmount,
-			'/ premiada =',
-			this.doorRewarded
+			'/ Premiada =',
+			this.doorRewarded,
+			'/ Pd abrir',
+			this.toOpen
 		);
 	},
 };
@@ -88,7 +88,6 @@ export default {
 	/* Sombras */
 	--shadow-txt: 1px 1px 3px #0006;
 	--shadow-h1: 2px 2px 3px #0009;
-
 	/* Gradientes */
 	--bg: linear-gradient(to right, #080e60 0%, #121fcf 39%, #ca63ce 100%);
 }
