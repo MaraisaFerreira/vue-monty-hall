@@ -4,7 +4,7 @@
 			<Gift v-if="open && hasGift" />
 			<Error v-if="open && !hasGift" />
 		</div>
-		<div class="door">
+		<div :class="{ door: !open, opened: open }">
 			<div class="img-box">
 				<img src="../assets/imgs/door.jpg" />
 			</div>
@@ -22,7 +22,7 @@ export default {
 	props: {
 		number: {},
 		hasGift: { type: Boolean },
-		open: {},
+		open: { type: Boolean },
 	},
 };
 </script>
@@ -43,6 +43,7 @@ export default {
 		0 0 20px #ccff0095, 0 0 20px #ccff0095, 0 0 20px #ccff0095,
 		0 0 25px #ccff0095, 0 0 20px #ccff0095;
 }
+
 .door-area {
 	position: relative;
 	width: var(--door-width);
@@ -53,7 +54,9 @@ export default {
 	font-size: 1.3rem;
 	margin-right: var(--door-margin);
 	margin-left: var(--door-margin);
+	overflow: hidden;
 }
+
 .door-frame {
 	position: absolute;
 	width: 100%;
@@ -67,6 +70,7 @@ export default {
 	border-bottom: 5px solid black;
 	background: var(--bg-opened-door);
 }
+
 .door {
 	position: absolute;
 	width: 100%;
@@ -75,15 +79,17 @@ export default {
 	flex-direction: column;
 	align-items: center;
 }
+
 .img-box {
-	position: absolute;
 	width: 100%;
 	height: 100%;
 }
+
 .img-box img {
 	width: 100%;
 	height: 100%;
 }
+
 .door .number {
 	position: absolute;
 	z-index: 10;
@@ -96,13 +102,13 @@ export default {
 	align-items: center;
 	justify-content: center;
 }
-.open {
+.opened img {
 	display: none;
 }
-.door.open .img-box {
+.door.opened .img-box {
 	display: none;
 }
-.door.open .number {
+.door.opened .number {
 	display: none;
 }
 .doorSelected {
