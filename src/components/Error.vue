@@ -20,6 +20,6 @@ export default {
 }
 
 .error img {
-	width: 190px;
+	width: 150px;
 }
 </style>

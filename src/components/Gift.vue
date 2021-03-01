@@ -20,6 +20,6 @@ export default {
 }
 
 .gift img {
-	width: 190px;
+	width: 140px;
 }
 </style>

@@ -102,15 +102,11 @@ export default {
 	align-items: center;
 	justify-content: center;
 }
+
 .opened img {
 	display: none;
 }
-.door.opened .img-box {
-	display: none;
-}
-.door.opened .number {
-	display: none;
-}
+
 .doorSelected {
 	box-shadow: var(--selected-shadow);
 }
