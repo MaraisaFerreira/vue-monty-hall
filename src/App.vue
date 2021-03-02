@@ -1,7 +1,7 @@
 <template>
 	<div id="app">
-		<h1>Desafio: Monty Hall</h1>
-		<div>
+		<h1>Monty Hall Desafio</h1>
+		<div class="msgs">
 			<!-- inicial -->
 			<h2 v-if="!selected">Em qual porta está o presente?</h2>
 			<h5 v-if="!selected">(Selecione uma porta)</h5>
@@ -214,11 +214,15 @@ body {
 	align-items: center;
 }
 
+.msgs {
+	margin: 20px 0;
+}
+
 #app h1 {
 	text-shadow: var(--shadow-h1);
 	background: #0008;
 	padding: 15px;
-	margin-top: 10px;
+	margin-top: 20px;
 	border: 1px solid black;
 	text-align: center;
 }
