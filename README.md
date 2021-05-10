@@ -4,6 +4,6 @@
 
 <img src='./public/screenshot.gif'>
 
-<h4> Veja <a href='https://mf-monty-hall.web.app/'>aqui</a> o deploy.</h4>
+<h4> Veja <a href='https://mf-vue-monty-hall.web.app/'>aqui</a> o deploy.</h4>
 
 </div>
