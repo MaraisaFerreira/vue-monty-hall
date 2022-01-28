@@ -2,11 +2,9 @@
 	<div id="app">
 		<h1>Monty Hall Desafio</h1>
 		<div class="msgs">
-			<!-- inicial -->
 			<h2 v-if="!selected">Em qual porta está o presente?</h2>
 			<h5 v-if="!selected">(Selecione uma porta)</h5>
 
-			<!-- primeira msg -->
 			<h2 v-if="selected && chances == 1">
 				Tem Certeza? Não quer trocar de porta?
 			</h2>
@@ -14,7 +12,7 @@
 				Vou te ajudar, nas portas {{ numberMsg }}, o presente NÃO está!
 			</h5>
 
-			<!-- segunda msg -->
+
 			<h2 v-if="selected && chances == 2">
 				Última chance de trocar!
 			</h2>
@@ -22,7 +20,6 @@
 				Nas portas {{ numberMsg }}, o presente NÃO está!
 			</h5>
 
-			<!-- fim de jogo -->
 			<div v-if="chances == 3" class="result">
 				<img v-if="win" src="./assets/imgs/yeah.gif" />
 				<p v-if="win">
@@ -70,17 +67,15 @@ export default {
 		};
 	},
 	methods: {
-		//gera a qtd de portas do jogo
 		getDoorsAmount() {
 			return Math.floor(Math.random() * 5 + 5); //max 10 portas
 		},
 
-		//gera qual porta tá com o presente
 		getDoorRewarded() {
 			return Math.floor(Math.random() * (this.doorsAmount - 1) + 1); //de 1 a qtd portas
 		},
 
-		//selec/dessel as portas
+
 		setSelected(idx) {
 			if (this.openedDoors.includes(idx)) {
 				return; //já aberta
@@ -99,7 +94,6 @@ export default {
 			this.openDoors();
 		},
 
-		//abre as portas não premiadas ou selecionada
 		openDoors() {
 			if (this.chances == 0) {
 				const times = Math.ceil(this.toOpen.length / 2);
@@ -144,7 +138,6 @@ export default {
 			}
 		},
 
-		/* funções auxiliares */
 
 		orderByNumber(a, b) {
 			return a - b;
